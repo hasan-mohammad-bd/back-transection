@@ -5,18 +5,20 @@
 
 document.getElementById("deposit-button").addEventListener("click", function(){
     //get the amount deposited
-    const depositInput = document.getElementById("deposit-input");
+    const depositInput = document.getElementById("deposit-input");//catch the input
 
     const newDepositAmountText = depositInput.value;
-    const newDepositAmount = parseFloat(newDepositAmountText)
+    const newDepositAmount = parseFloat(newDepositAmountText)//catch the input value 
+
 
     //update deposit total
-    const depositTotal = document.getElementById("deposit-total");
+    const depositTotal = document.getElementById("deposit-total"); //targeting where the value will be stored.
 
-    const previousDepositText = depositTotal.innerText;
-    const previousDepositAmount = parseFloat(previousDepositText);
+    const previousDepositText = depositTotal.innerText;//setting the innerText where the value will be stored.
 
-    const newDepositTotal = previousDepositAmount+ newDepositAmount;
+    const previousDepositAmount = parseFloat(previousDepositText); //converting string to number.
+
+    const newDepositTotal = previousDepositAmount+ newDepositAmount;//here new deposit amount comes directly from input.value
 
     depositTotal.innerText = newDepositTotal
 
@@ -56,7 +58,9 @@ document.getElementById("withdraw-button").addEventListener("click",function(){
     const previousBalanceText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(previousBalanceText)
     const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
-    
+
+    balanceTotal.innerText = newBalanceTotal;
+
 
 
 
